@@ -1,4 +1,4 @@
-import { SimpleLinearRegression } from "./src/simple-linear-regression.ts";
+import { SimpleLinearRegression } from "https://deno.land/x/simple_linear_regression/mod.ts";
 
 const X = [1, 2, 3, 4];
 const Y = [3, 5, 7, 9];
