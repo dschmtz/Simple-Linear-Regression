@@ -5,7 +5,7 @@ const Y = [3, 5, 7, 9];
 
 let slr = new SimpleLinearRegression(X, Y);
 
-console.log(slr.predict(10));
+console.log(`y = ${slr.intercept} + ${slr.slope}x`);
+console.log("Prediction for x=10:", slr.predict(10));
 
-console.log(slr.intercept);
-console.log(slr.slope);
+console.log("R² value:", slr.score(X, Y))

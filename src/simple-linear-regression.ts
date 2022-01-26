@@ -21,22 +21,37 @@ export class SimpleLinearRegression {
         }
 
         meanX /= n, meanY /= n;
-        let deltaXY = 0, deltaX = 0;
+        let sigmaXY = 0, sigmaX = 0;
 
         for(let i = 0; i < n; i++) {
-            deltaXY += (x[i] - meanX) * (y[i] - meanY);
-            deltaX += Math.pow((x[i] - meanX), 2); 
+            sigmaXY += (x[i] - meanX) * (y[i] - meanY);
+            sigmaX += Math.pow((x[i] - meanX), 2); 
         }
 
-        this.slope = deltaXY / deltaX;
+        this.slope = sigmaXY / sigmaX;
         this.intercept = meanY - this.slope * meanX;
     }
 
     score(x: any, y: any) {
-        return 0;
+        let n = y.length;
+        let meanY = 0;
+
+        for(let i = 0; i < n; i++) {
+            meanY += y[i];
+        }
+
+        meanY /= n;
+        let sse = 0, sst = 0;
+
+        for(let i = 0; i < n; i++) {
+            sse += Math.pow((y[i] - this.predict(x[i])), 2);
+            sst += Math.pow((y[i] - meanY), 2);
+        }
+
+        return 1 - sse / sst;
     }
 
-    predict(x:number) {
+    predict(x: number) {
         return this.intercept + this.slope * x;
     }
 }
