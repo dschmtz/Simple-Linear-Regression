@@ -17,5 +17,10 @@ regression.score(X, Y); // Returns R² = 1
 
 ## Execute usage example
 ```
-deno run ./usage-example.ts
+deno run https://deno.land/x/simple_linear_regression/usage-example.ts
+```
+
+## Execute testings
+```
+deno test https://deno.land/x/simple_linear_regression/src/simple-linear-regression.test.ts
 ```

@@ -7,5 +7,4 @@ let slr = new SimpleLinearRegression(X, Y);
 
 console.log(`y = ${slr.intercept} + ${slr.slope}x`);
 console.log("Prediction for x=10:", slr.predict(10));
-
 console.log("R² value:", slr.score(X, Y))
