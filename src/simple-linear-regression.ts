@@ -2,11 +2,11 @@ export class SimpleLinearRegression {
     intercept: number = 0;
     slope: number = 0;
 
-    constructor(x: any, y: any) {
+    constructor(x: number[], y: number[]) {
         this.train(x, y);
     }
 
-    train(x: any, y: any) {
+    train(x: number[], y: number[]) {
         let n = x.length;
 
         if(n != y.length) {
@@ -32,7 +32,7 @@ export class SimpleLinearRegression {
         this.intercept = meanY - this.slope * meanX;
     }
 
-    score(x: any, y: any) {
+    score(x: number[], y: number[]) {
         let n = y.length;
         let meanY = 0;
 
