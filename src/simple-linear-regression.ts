@@ -10,7 +10,7 @@ export class SimpleLinearRegression {
         let n = x.length;
 
         if(n != y.length) {
-            throw "Arrays have to be of same size";
+            throw new Error("Arrays have to be of same size");
         }
 
         let meanX = 0, meanY = 0;
@@ -37,7 +37,7 @@ export class SimpleLinearRegression {
         let meanY = 0;
 
         if(n != x.length) {
-            throw "Arrays have to be of same size";
+            throw new Error("Arrays have to be of same size");
         }
 
         for(let i = 0; i < n; i++) {
